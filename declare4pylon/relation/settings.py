@@ -5,5 +5,5 @@ from declare4pylon.constraint import DeclareConstraintSettings
 
 @dataclass(frozen=True, kw_only=True)
 class RelationConstraintSettings(DeclareConstraintSettings):
-    activity_a: int
-    activity_b: int
+    a: int
+    b: int

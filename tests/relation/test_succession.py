@@ -2,8 +2,11 @@ from contextlib import nullcontext as does_not_raise
 
 import pytest
 import torch
+from pylon.sampling_solver import WeightedSamplingSolver
 
+from declare4pylon.relation.settings import RelationConstraintSettings
 from declare4pylon.relation.succession import (
+    AlternateSuccessionConstraint,
     alternate_succession,
     chain_succession,
     succession,
@@ -97,3 +100,11 @@ def test_chain_succession(traces, a, b, prefixes, expected_result, expected_rais
         assert torch.equal(
             chain_succession(traces, a=a, b=b, prefixes=prefixes), expected_result
         )
+
+
+def test_alternate_succession_constraint():
+    alternate_succession_constraint = AlternateSuccessionConstraint(
+        settings=RelationConstraintSettings(a=A, b=B),
+        solver=WeightedSamplingSolver(num_samples=1),
+    )
+    alternate_succession_constraint(torch.tensor([[[-torch.inf, -torch.inf, 1]]]))

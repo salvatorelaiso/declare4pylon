@@ -8,5 +8,6 @@ class ExistenceConstraintSettings(DeclareConstraintSettings):
     activity: int
 
 
+@dataclass(frozen=True, kw_only=True)
 class ExistenceCountConstraintSettings(ExistenceConstraintSettings):
     count: int = 1

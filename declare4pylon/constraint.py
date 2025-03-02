@@ -42,3 +42,11 @@ class DeclareConstraint(ABC):
 
     def __repr__(self) -> str:
         return self.__str__()
+
+    @property
+    def settings(self):
+        return self._settings
+
+    @property
+    def condition(self):
+        return self._condition

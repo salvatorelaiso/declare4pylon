@@ -40,7 +40,6 @@ class DeclareConstraint(ABC):
         sampled: torch.Tensor,
         kwargs: dict,
     ) -> callable:
-        print(DeclareConstraint._condition)
         return cls._condition(sampled, **kwargs)
 
     def __str__(self) -> str:

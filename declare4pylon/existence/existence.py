@@ -39,7 +39,7 @@ def existence(
 
 
 class ExistenceConstraint(DeclareConstraint):
-    _condition = existence
+    _condition = staticmethod(existence)
 
     def __init__(self, settings: ExistenceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

@@ -132,21 +132,21 @@ def chain_precedence(
 
 
 class PrecedenceConstraint(DeclareConstraint):
-    _condition = precedence
+    _condition = staticmethod(precedence)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class AlternatePrecedenceConstraint(DeclareConstraint):
-    _condition = alternate_precedence
+    _condition = staticmethod(alternate_precedence)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class ChainPrecedenceConstraint(DeclareConstraint):
-    _condition = chain_precedence
+    _condition = staticmethod(chain_precedence)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

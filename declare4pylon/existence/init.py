@@ -33,7 +33,7 @@ def init(
 
 
 class InitConstraint(DeclareConstraint):
-    _condition = init
+    _condition = staticmethod(init)
 
     def __init__(self, settings: ExistenceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

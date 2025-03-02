@@ -35,7 +35,7 @@ def choice(
 
 
 class ChoiceConstraint(DeclareConstraint):
-    _condition = choice
+    _condition = staticmethod(choice)
 
     def __init__(self, settings: ChoiceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

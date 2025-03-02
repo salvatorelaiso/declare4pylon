@@ -39,7 +39,7 @@ def absence(
 
 
 class AbsenceConstraint(DeclareConstraint):
-    _condition = absence
+    _condition = staticmethod(absence)
 
     def __init__(self, settings: ExistenceCountConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

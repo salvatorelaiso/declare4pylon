@@ -35,7 +35,7 @@ def exclusive_choice(
 
 
 class ExclusiveChoiceConstraint(DeclareConstraint):
-    _condition = exclusive_choice
+    _condition = staticmethod(exclusive_choice)
 
     def __init__(self, settings: ChoiceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

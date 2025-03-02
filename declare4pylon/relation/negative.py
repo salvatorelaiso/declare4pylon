@@ -112,21 +112,21 @@ def not_chain_succession(
 
 
 class NotCoExistenceConstraint(DeclareConstraint):
-    _condition = not_co_existence
+    _condition = staticmethod(not_co_existence)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class NotSuccessionConstraint(DeclareConstraint):
-    _condition = not_succession
+    _condition = staticmethod(not_succession)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class NotChainSuccessionConstraint(DeclareConstraint):
-    _condition = not_chain_succession
+    _condition = staticmethod(not_chain_succession)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

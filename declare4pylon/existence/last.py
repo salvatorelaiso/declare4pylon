@@ -44,7 +44,7 @@ def last(sampled: torch.IntTensor, *, activity: int) -> torch.BoolTensor:
 
 
 class LastConstraint(DeclareConstraint):
-    _condition = last
+    _condition = staticmethod(last)
 
     def __init__(self, settings: ExistenceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

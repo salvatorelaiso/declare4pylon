@@ -39,7 +39,7 @@ def exactly(
 
 
 class ExactlyConstraint(DeclareConstraint):
-    _condition = exactly
+    _condition = staticmethod(exactly)
 
     def __init__(self, settings: ExistenceCountConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

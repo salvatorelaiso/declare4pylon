@@ -132,21 +132,21 @@ def chain_response(
 
 
 class ResponseConstraint(DeclareConstraint):
-    _condition = response
+    _condition = staticmethod(response)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class AlternateResponseConstraint(DeclareConstraint):
-    _condition = alternate_response
+    _condition = staticmethod(alternate_response)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class ChainResponseConstraint(DeclareConstraint):
-    _condition = chain_response
+    _condition = staticmethod(chain_response)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

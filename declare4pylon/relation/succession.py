@@ -107,21 +107,21 @@ def chain_succession(
 
 
 class SuccessionConstraint(DeclareConstraint):
-    _condition = succession
+    _condition = staticmethod(succession)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class AlternateSuccessionConstraint(DeclareConstraint):
-    _condition = alternate_succession
+    _condition = staticmethod(alternate_succession)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
 
 
 class ChainSuccessionConstraint(DeclareConstraint):
-    _condition = chain_succession
+    _condition = staticmethod(chain_succession)
 
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)

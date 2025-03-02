@@ -30,6 +30,8 @@ class DeclareConstraint(ABC):
         self._constraint = constraint(solver=solver, cond=self._compute)
 
     def __call__(self, logits, prefixes: torch.IntTensor | None = None) -> torch.Tensor:
+        if self._condition is None:
+            raise NotImplementedError("'_condition' must be defined in a subclass")
         return self._constraint(logits, **self._settings.dict(), prefixes=prefixes)
 
     @classmethod

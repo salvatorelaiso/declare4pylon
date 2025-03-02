@@ -132,36 +132,21 @@ def chain_response(
 
 
 class ResponseConstraint(DeclareConstraint):
+    _condition = response
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return response(sampled, **kwargs)
 
 
 class AlternateResponseConstraint(DeclareConstraint):
+    _condition = alternate_response
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return alternate_response(sampled, **kwargs)
 
 
 class ChainResponseConstraint(DeclareConstraint):
+    _condition = chain_response
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return chain_response(sampled, **kwargs)

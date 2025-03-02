@@ -1,6 +1,7 @@
 import json
-from abc import ABC, abstractmethod
+from abc import ABC
 from dataclasses import asdict
+from typing import Self
 
 import torch
 from pydantic.dataclasses import dataclass
@@ -21,21 +22,24 @@ class DeclareConstraintSettings(ABC):
 
 
 class DeclareConstraint(ABC):
+    _condition: callable = None
+
     def __init__(self, settings: DeclareConstraintSettings, solver: Solver):
         self._settings = settings
         self._solver = solver
-        self._constraint = constraint(solver=solver, cond=self._condition)
+        self._constraint = constraint(solver=solver, cond=self._compute)
 
     def __call__(self, logits, prefixes: torch.IntTensor | None = None) -> torch.Tensor:
         return self._constraint(logits, **self._settings.dict(), prefixes=prefixes)
 
-    @staticmethod
-    @abstractmethod
-    def _condition(
+    @classmethod
+    def _compute(
+        cls: type[Self],
         sampled: torch.Tensor,
         kwargs: dict,
     ) -> callable:
-        raise NotImplementedError
+        print(DeclareConstraint._condition)
+        return cls._condition(sampled, **kwargs)
 
     def __str__(self) -> str:
         return f"{self.__class__.__name__}(solver={self._solver.__class__.__name__}({', '.join(f'{k}={repr(v)}' for k, v in self._solver.__dict__.items() if k != "cond")}), settings={self._settings})"

@@ -76,24 +76,14 @@ def co_existence(
 
 
 class RespondedExistenceConstraint(DeclareConstraint):
+    _condition = responded_existence
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return responded_existence(sampled, **kwargs)
 
 
 class CoExistenceConstraint(DeclareConstraint):
+    _condition = co_existence
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return co_existence(sampled, **kwargs)

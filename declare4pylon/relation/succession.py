@@ -107,36 +107,21 @@ def chain_succession(
 
 
 class SuccessionConstraint(DeclareConstraint):
+    _condition = succession
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return succession(sampled, **kwargs)
 
 
 class AlternateSuccessionConstraint(DeclareConstraint):
+    _condition = alternate_succession
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return alternate_succession(sampled, **kwargs)
 
 
 class ChainSuccessionConstraint(DeclareConstraint):
+    _condition = chain_succession
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return chain_succession(sampled, **kwargs)

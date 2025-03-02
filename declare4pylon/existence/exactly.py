@@ -39,12 +39,7 @@ def exactly(
 
 
 class ExactlyConstraint(DeclareConstraint):
+    _condition = exactly
+
     def __init__(self, settings: ExistenceCountConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return exactly(sampled, **kwargs)

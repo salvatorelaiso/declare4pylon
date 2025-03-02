@@ -132,36 +132,21 @@ def chain_precedence(
 
 
 class PrecedenceConstraint(DeclareConstraint):
+    _condition = precedence
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return precedence(sampled, **kwargs)
 
 
 class AlternatePrecedenceConstraint(DeclareConstraint):
+    _condition = alternate_precedence
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return alternate_precedence(sampled, **kwargs)
 
 
 class ChainPrecedenceConstraint(DeclareConstraint):
+    _condition = chain_precedence
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return chain_precedence(sampled, **kwargs)

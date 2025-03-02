@@ -112,36 +112,21 @@ def not_chain_succession(
 
 
 class NotCoExistenceConstraint(DeclareConstraint):
+    _condition = not_co_existence
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return not_co_existence(sampled, **kwargs)
 
 
 class NotSuccessionConstraint(DeclareConstraint):
+    _condition = not_succession
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return not_succession(sampled, **kwargs)
 
 
 class NotChainSuccessionConstraint(DeclareConstraint):
+    _condition = not_chain_succession
+
     def __init__(self, settings: RelationConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return not_chain_succession(sampled, **kwargs)

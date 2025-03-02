@@ -35,12 +35,7 @@ def choice(
 
 
 class ChoiceConstraint(DeclareConstraint):
+    _condition = choice
+
     def __init__(self, settings: ChoiceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return choice(sampled, **kwargs)

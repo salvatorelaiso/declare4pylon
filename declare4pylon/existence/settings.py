@@ -9,4 +9,4 @@ class ExistenceConstraintSettings(DeclareConstraintSettings):
 
 
 class ExistenceCountConstraintSettings(ExistenceConstraintSettings):
-    count: int
+    count: int = 1

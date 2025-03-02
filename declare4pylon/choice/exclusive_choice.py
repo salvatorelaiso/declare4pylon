@@ -35,12 +35,7 @@ def exclusive_choice(
 
 
 class ExclusiveChoiceConstraint(DeclareConstraint):
+    _condition = exclusive_choice
+
     def __init__(self, settings: ChoiceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return exclusive_choice(sampled, **kwargs)

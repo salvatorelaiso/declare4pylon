@@ -33,12 +33,7 @@ def init(
 
 
 class InitConstraint(DeclareConstraint):
+    _condition = init
+
     def __init__(self, settings: ExistenceConstraintSettings, solver: Solver):
         super().__init__(settings, solver)
-
-    @staticmethod
-    def _condition(
-        sampled: torch.Tensor,
-        kwargs: dict,
-    ) -> callable:
-        return init(sampled, **kwargs)

@@ -16,6 +16,12 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+dependencies = [
+    "jaxtyping>=0.3.1",
+    "numpy>=2.2.4",
+    "pylon-lib>=0.1.0",
+    "torch>=2.6.0",
+]
 
 [project.urls]
 Homepage = "https://salvatorelaiso.github.io/declare4pylon/"
@@ -63,6 +69,7 @@ fix = true
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
+    "D100",     # ignore missing docstring in public module
     "D203",     # ignore `incorrect-blank-line-before-class` (D203) which is not compatible with `no-blank-line-before-class` (D211)
     "D213",     # ignore `multi-line-summary-second-line` (D213) which is not compatible with `multi-line-summary-first-line` (D213)
     "F722",     # ignore F722 (see https://docs.kidger.site/jaxtyping/faq/#flake8-or-ruff-are-throwing-an-error)

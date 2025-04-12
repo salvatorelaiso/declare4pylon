@@ -1,0 +1,52 @@
+site_name: declare4pylon
+repo_url: https://github.com/salvatorelaiso/declare4pylon
+site_url: https://salvatorelaiso.github.io/declare4pylon
+site_description: DECLARE constraints implementation for pylon-lib.
+site_author: Salvatore Laiso
+edit_uri: edit/main/docs/
+repo_name: salvatorelaiso/declare4pylon
+copyright: Maintained by <a href="https://salvatorelaiso.com">salvatorelaiso</a>.
+
+nav:
+  - Home: index.md
+  - Modules: modules.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["src/declare4pylon"]
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/salvatorelaiso/declare4pylon
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/declare4pylon
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true

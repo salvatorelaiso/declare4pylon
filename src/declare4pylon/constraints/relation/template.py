@@ -11,14 +11,13 @@ class RelationTemplate(DeclareConstraint):
     """
 
     def __init__(self, activity_a: int, activity_b: int) -> None:
-        """Initialize the RelationTemplate with two activities and a count.
+        """Initialize the RelationTemplate with two activities.
 
         Args:
         ----
             activity_a (int): The first activity to be used in the relation constraint.
             activity_b (int): The second activity to be used in the relation constraint.
-            count (int): The number of occurrences to be considered in the evaluation.
-                Default is 1.
+
 
         """
         self.activity_a = activity_a

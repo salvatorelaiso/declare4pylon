@@ -1,6 +1,6 @@
 import pytest
 
-from declare4pylon.operators.unary import UnaryOperator
+from declare4pylon.operators import UnaryOperator
 
 
 def test_cannot_instantiate_unary_operator():

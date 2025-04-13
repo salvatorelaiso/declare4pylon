@@ -22,8 +22,8 @@ all_false = torch.zeros(3, dtype=torch.bool)
 
 
 def test_evaluate_all_true():
-    binary_and = BinaryOr(identity, identity)
-    result = binary_and.evaluate(all_true)
+    binary_or = BinaryOr(identity, identity)
+    result = binary_or.evaluate(all_true)
     expected = all_true
     assert torch.equal(result, expected)
 
@@ -31,19 +31,19 @@ def test_evaluate_all_true():
 def test_evaluate_mixed_values():
     mixed_values = torch.BoolTensor([True, False, True])
 
-    binary_and = BinaryOr(identity, identity)
-    result = binary_and.evaluate(mixed_values)
+    binary_or = BinaryOr(identity, identity)
+    result = binary_or.evaluate(mixed_values)
     expected = mixed_values
     assert torch.equal(result, expected)
 
-    binary_and = BinaryOr(identity, negation)
-    result = binary_and.evaluate(mixed_values)
+    binary_or = BinaryOr(identity, negation)
+    result = binary_or.evaluate(mixed_values)
     expected = all_true
     assert torch.equal(result, expected)
 
 
 def test_evaluate_all_false():
-    binary_and = BinaryOr(identity, identity)
-    result = binary_and.evaluate(all_false)
+    binary_or = BinaryOr(identity, identity)
+    result = binary_or.evaluate(all_false)
     expected = all_false
     assert torch.equal(result, expected)

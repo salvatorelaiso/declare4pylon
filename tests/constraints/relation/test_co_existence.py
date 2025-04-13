@@ -16,11 +16,11 @@ from tests.constants import A, B
         (A, B, [[B, _, A]], [True]),
     ],
     ids=[
-        "CoExistenceConstraint (Neither A nor B)",
-        "CoExistenceConstraint (Only A)",
-        "CoExistenceConstraint (Only B)",
-        "CoExistenceConstraint (A and B)",
-        "CoExistenceConstraint (B and A)",
+        "CoExistence (Neither A nor B)",
+        "CoExistence (Only A)",
+        "CoExistence (Only B)",
+        "CoExistence (A and B)",
+        "CoExistence (B and A)",
     ],
 )
 def test_co_existence_constraint_evaluate(

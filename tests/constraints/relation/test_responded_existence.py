@@ -16,11 +16,11 @@ from tests.constants import A, B
         (A, B, [[B, _, A]], [True]),
     ],
     ids=[
-        "RespondedExistenceConstraint (Neither A nor B)",
-        "RespondedExistenceConstraint (Only A)",
-        "RespondedExistenceConstraint (Only B)",
-        "RespondedExistenceConstraint (A and B)",
-        "RespondedExistenceConstraint (B and A)",
+        "RespondedExistence (Neither A nor B)",
+        "RespondedExistence (Only A)",
+        "RespondedExistence (Only B)",
+        "RespondedExistence (A and B)",
+        "RespondedExistence (B and A)",
     ],
 )
 def test_responded_existence_constraint_evaluate(

@@ -1,6 +1,6 @@
 import pytest
 
-from declare4pylon.operators.operator import Operator
+from declare4pylon.operators import Operator
 
 
 def test_cannot_instantiate_operator():

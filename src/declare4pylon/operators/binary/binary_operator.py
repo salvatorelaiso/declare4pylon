@@ -1,5 +1,5 @@
 from declare4pylon import LogicExpression
-from declare4pylon.operators.operator import Operator
+from declare4pylon.operators import Operator
 
 
 class BinaryOperator(Operator):

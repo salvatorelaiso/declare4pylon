@@ -1,10 +1,11 @@
 # Operator import must be the first import in this file
 from .operator import Operator  # noqa: I001
 from .binary import BinaryOperator
-from .unary import UnaryOperator
+from .unary import UnaryOperator, UnaryNot
 
 __all__ = [
     "BinaryOperator",
     "Operator",
+    "UnaryNot",
     "UnaryOperator",
 ]

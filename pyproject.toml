@@ -47,6 +47,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 
+[tool.deptry.per_rule_ignores]
+DEP002 = ["numpy"]
 
 [tool.mypy]
 files = ["src"]
@@ -70,11 +72,11 @@ fix = true
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-    "D100",     # ignore missing docstring in public module
-    "D203",     # ignore `incorrect-blank-line-before-class` (D203) which is not compatible with `no-blank-line-before-class` (D211)
-    "D213",     # ignore `multi-line-summary-second-line` (D213) which is not compatible with `multi-line-summary-first-line` (D213)
-    "F722",     # ignore F722 (see https://docs.kidger.site/jaxtyping/faq/#flake8-or-ruff-are-throwing-an-error)
-    "COM812",   # warning states it may cause conflicts when used with the formatter
+    "D100",   # ignore missing docstring in public module
+    "D203",   # ignore `incorrect-blank-line-before-class` (D203) which is not compatible with `no-blank-line-before-class` (D211)
+    "D213",   # ignore `multi-line-summary-second-line` (D213) which is not compatible with `multi-line-summary-first-line` (D213)
+    "F722",   # ignore F722 (see https://docs.kidger.site/jaxtyping/faq/#flake8-or-ruff-are-throwing-an-error)
+    "COM812", # warning states it may cause conflicts when used with the formatter
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
@@ -82,13 +84,13 @@ ignore = [
     "D104", # missing docstring in public package
 ]
 "tests/**/*.py" = [
-    "D100",     # missing docstring in public module
-    "D101",     # missing docstring in public class
-    "D103",     # ignore missing docstring in public function
-    "S101",     # ignore use of `assert` detected
-    "ANN201",   # ignore missing return type annotation for public function
-    "FBT",      # ignore boolean-typed positional argument in function definition
-    "PLR2004",  # ignore magic value used in comparison
+    "D100",    # missing docstring in public module
+    "D101",    # missing docstring in public class
+    "D103",    # ignore missing docstring in public function
+    "S101",    # ignore use of `assert` detected
+    "ANN201",  # ignore missing return type annotation for public function
+    "FBT",     # ignore boolean-typed positional argument in function definition
+    "PLR2004", # ignore magic value used in comparison
 ]
 
 [tool.ruff.format]

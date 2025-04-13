@@ -23,7 +23,7 @@ from tests.constants import A, B
         "Response (B and A)",
     ],
 )
-def test_co_existence_constraint_evaluate(
+def test_response_constraint_evaluate(
     activity_a: int,
     activity_b: int,
     traces: list[list[int]],

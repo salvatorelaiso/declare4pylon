@@ -10,11 +10,7 @@ class LogicExpression(ABC):
     This class defines the interface for logic expressions used in the Declare4Pylon library.
     Subclasses must implement the `_condition` method to define the specific logic expression.
 
-    Args:
-    ----
-        activity (int): The activity to be used in the logic expression.
-        count (int): The count of occurrences for the activity.
-
+    The class provides an `evaluate` method that applies the logic expression to a batch of traces.
     """
 
     def evaluate(self, traces: Int[torch.Tensor, "batch activities"]) -> Bool[torch.Tensor, " batch"]:

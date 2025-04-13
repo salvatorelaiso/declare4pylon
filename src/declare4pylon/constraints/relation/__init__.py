@@ -6,6 +6,7 @@ from .co_existence import CoExistenceConstraint
 from .precedence import PrecedenceConstraint
 from .responded_existence import RespondedExistenceConstraint
 from .response import ResponseConstraint
+from .succession import SuccessionConstraint
 from .template import RelationTemplate
 
 __all__ = [
@@ -18,4 +19,5 @@ __all__ = [
     "RelationTemplate",
     "RespondedExistenceConstraint",
     "ResponseConstraint",
+    "SuccessionConstraint",
 ]

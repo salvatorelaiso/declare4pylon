@@ -3,7 +3,7 @@ from jaxtyping import Float, Int
 from pylon.constraint import constraint
 from pylon.solver import Solver
 
-from declare4pylon.logic_expression import LogicExpression
+from .logic_expression import LogicExpression
 
 
 class DeclareConstraintLoss:
@@ -18,7 +18,7 @@ class DeclareConstraintLoss:
     -------
         >>> from declare4pylon import DeclareConstraintLoss
         >>> from pylon.solver import WeightedSamplingSolver
-        >>> from declare4pylon.logic_expression import ExistenceConstraint
+        >>> from declare4pylon import ExistenceConstraint
         >>>
         >>> constraint_loss = DeclareConstraintLoss(
         ...     ExistenceConstraint(activity=1, count=1),

@@ -1,6 +1,6 @@
 import torch
 
-from declare4pylon.logic_expression import LogicExpression
+from declare4pylon import LogicExpression
 
 
 class MockLogicalExpression(LogicExpression):

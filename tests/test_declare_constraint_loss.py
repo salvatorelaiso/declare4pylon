@@ -1,8 +1,7 @@
 import torch
 from pylon.sampling_solver import WeightedSamplingSolver
 
-from declare4pylon.declare_constraint_loss import DeclareConstraintLoss
-from declare4pylon.logic_expression import LogicExpression
+from declare4pylon import DeclareConstraintLoss, LogicExpression
 
 
 class MockSatisfiedLogicExpression(LogicExpression):

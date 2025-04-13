@@ -28,19 +28,6 @@ class InitConstraint(ExistenceTemplate):
 
     """
 
-    def __init__(
-        self,
-        activity: int,
-    ) -> None:
-        """Initialize the InitConstraint with an activity.
-
-        Args:
-        ----
-            activity (int): The activity to be used in the init constraint.
-
-        """
-        super().__init__(activity)
-
     def _condition(
         self,
         traces: Int[torch.Tensor, "batch activities"],
@@ -68,19 +55,6 @@ class InitConstraintAfterSpecialToken(ExistenceTemplate):
         activity (int): The activity to be used in the init constraint.
 
     """
-
-    def __init__(
-        self,
-        activity: int,
-    ) -> None:
-        """Initialize the InitConstraintAfterSpecialToken with an activity.
-
-        Args:
-        ----
-            activity (int): The activity to be used in the init constraint.
-
-        """
-        super().__init__(activity)
 
     def _condition(
         self,

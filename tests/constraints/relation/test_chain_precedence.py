@@ -30,7 +30,7 @@ from tests.constants import A, B
         "ChainPrecedence (B and A but not immediately)",
         "ChainPrecedence (A and another A before B)",
         "ChainPrecedence (A and B before another A)",
-        "ChainPrecedence (first B, then A before A)",
+        "ChainPrecedence (first B, then A before B)",
     ],
 )
 def test_chain_precedence_constraint_evaluate(

@@ -12,6 +12,8 @@ nav:
   - Modules:
       - Declare4pylon: declare4pylon.md
       - Operators: declare4pylon/operators.md
+      - Constraints:
+          - Existence: declare4pylon/constraints/existence.md
 plugins:
   - search
   - mkdocstrings:

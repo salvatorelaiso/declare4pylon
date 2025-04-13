@@ -16,8 +16,8 @@ class BinaryOperator(Operator):
 
         Args:
         ----
-            left (LogicalExpression): The left operand.
-            right (LogicalExpression): The right operand.
+            left (LogicExpression): The left operand.
+            right (LogicExpression): The right operand.
 
         """
         self.left = left

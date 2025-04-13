@@ -88,6 +88,8 @@ class LastConstraint(ExistenceTemplate):
             # Check if the second last index is the activity and the last index is the
             # eos
             else:
-                result[i] = row[last_index - 1] == self.activity and row[last_index] == self.eos_value
+                result[i] = (
+                    last_index > 0 and row[last_index - 1] == self.activity and row[last_index] == self.eos_value
+                )
 
         return result

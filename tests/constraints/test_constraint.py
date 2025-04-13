@@ -1,6 +1,6 @@
 import pytest
 
-from declare4pylon.constraints.constraint import DeclareConstraint
+from declare4pylon.constraints import DeclareConstraint
 
 
 def test_cannot_instantiate_constraint():

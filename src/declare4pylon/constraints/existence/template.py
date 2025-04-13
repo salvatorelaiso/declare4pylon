@@ -11,7 +11,7 @@ ExistenceTemplateWithCount class is used for defining existence constraints that
 require a count of occurrences.
 """
 
-from declare4pylon.constraints.constraint import DeclareConstraint
+from declare4pylon.constraints import DeclareConstraint
 
 
 class ExistenceTemplate(DeclareConstraint):

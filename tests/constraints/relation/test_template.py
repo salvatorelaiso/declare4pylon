@@ -1,6 +1,6 @@
 import pytest
 
-from declare4pylon.constraints import RelationTemplate
+from declare4pylon.constraints.relation import RelationTemplate
 
 
 def test_cannot_instantiate_relation_template():

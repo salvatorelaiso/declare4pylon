@@ -1,15 +1,24 @@
-from .alternate_precedence import AlternatePrecedenceConstraint
-from .alternate_response import AlternateResponseConstraint
-from .alternate_succession import AlternateSuccessionConstraint
-from .chain_precedence import ChainPrecedenceConstraint
-from .chain_response import ChainResponseConstraint
-from .chain_succession import ChainSuccessionConstraint
-from .co_existence import CoExistenceConstraint
-from .precedence import PrecedenceConstraint
-from .responded_existence import RespondedExistenceConstraint
-from .response import ResponseConstraint
-from .succession import SuccessionConstraint
-from .template import RelationTemplate
+# RelationTemplate import must be the first import in this file
+from .template import RelationTemplate  # noqa: I001
+from .existence import (
+    CoExistenceConstraint,
+    RespondedExistenceConstraint,
+)
+from .precedence import (
+    AlternatePrecedenceConstraint,
+    ChainPrecedenceConstraint,
+    PrecedenceConstraint,
+)
+from .response import (
+    AlternateResponseConstraint,
+    ChainResponseConstraint,
+    ResponseConstraint,
+)
+from .succession import (
+    AlternateSuccessionConstraint,
+    ChainSuccessionConstraint,
+    SuccessionConstraint,
+)
 
 __all__ = [
     "AlternatePrecedenceConstraint",

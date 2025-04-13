@@ -1,7 +1,7 @@
 import torch
 from jaxtyping import Bool, Int
 
-from .template import RelationTemplate
+from declare4pylon.constraints.relation import RelationTemplate
 
 
 class ChainResponseConstraint(RelationTemplate):

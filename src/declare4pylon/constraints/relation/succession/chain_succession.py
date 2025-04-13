@@ -1,9 +1,11 @@
 import torch
 from jaxtyping import Bool, Int
 
-from declare4pylon.constraints.relation import ChainPrecedenceConstraint, ChainResponseConstraint
-
-from .template import RelationTemplate
+from declare4pylon.constraints.relation import (
+    ChainPrecedenceConstraint,
+    ChainResponseConstraint,
+    RelationTemplate,
+)
 
 
 class ChainSuccessionConstraint(RelationTemplate):

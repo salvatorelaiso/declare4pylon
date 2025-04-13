@@ -76,7 +76,7 @@ class DeclareConstraintLoss:
             Float[torch.Tensor, ""]: The loss value.
 
         """
-        return self._constraint(logits, prefixes=prefixes)
+        return self._constraint(logits, prefixes=prefixes)  # type: ignore[no-any-return]
 
     def _wrapper(self, traces: torch.Tensor, kwargs: dict) -> Float[torch.Tensor, ""]:
         if kwargs.get("prefixes") is not None:

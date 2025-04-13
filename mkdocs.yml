@@ -9,7 +9,9 @@ copyright: Maintained by <a href="https://salvatorelaiso.com">salvatorelaiso</a>
 
 nav:
   - Home: index.md
-  - Modules: modules.md
+  - Modules:
+      - Declare4pylon: declare4pylon.md
+      - Operators: declare4pylon/operators.md
 plugins:
   - search
   - mkdocstrings:

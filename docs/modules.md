@@ -1,1 +1,0 @@
-::: declare4pylon.foo

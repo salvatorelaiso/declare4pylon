@@ -22,3 +22,11 @@ class RelationTemplate(DeclareConstraint):
         """
         self.activity_a = activity_a
         self.activity_b = activity_b
+
+    def __repr__(self) -> str:
+        """Return a string representation for debugging."""
+        return f"{self.__class__.__name__}(activity_a={self.activity_a}, activity_b={self.activity_b})"
+
+    def __str__(self) -> str:
+        """Return a string representation of the relation template."""
+        return f"{self.__class__.__name__}({self.activity_a}, {self.activity_b})"

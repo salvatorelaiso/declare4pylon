@@ -33,6 +33,14 @@ class ExistenceTemplate(DeclareConstraint):
         """
         self.activity = activity
 
+    def __repr__(self) -> str:
+        """Return a string representation for debugging."""
+        return f"{self.__class__.__name__}(activity={self.activity})"
+
+    def __str__(self) -> str:
+        """Return a string representation of the existence template."""
+        return f"{self.__class__.__name__}({self.activity})"
+
 
 class ExistenceTemplateWithCount(ExistenceTemplate):
     """Base class for existence constraints with a count.
@@ -62,3 +70,11 @@ class ExistenceTemplateWithCount(ExistenceTemplate):
             raise ValueError(msg)
         super().__init__(activity=activity)
         self.count = count
+
+    def __repr__(self) -> str:
+        """Return a string representation for debugging."""
+        return f"{self.__class__.__name__}(activity={self.activity}, count={self.count})"
+
+    def __str__(self) -> str:
+        """Return a string representation of the existence template with count."""
+        return f"{self.__class__.__name__}({self.activity}, {self.count})"

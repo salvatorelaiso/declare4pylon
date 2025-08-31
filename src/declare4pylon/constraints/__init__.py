@@ -1,5 +1,7 @@
+# DeclareConstraint import must be the first import in this file
+from .constraint import DeclareConstraint  # noqa: I001
+
 from .choice import ChoiceConstraint, ExclusiveChoiceConstraint
-from .constraint import DeclareConstraint
 from .existence import (
     AbsenceConstraint,
     ExactlyConstraint,

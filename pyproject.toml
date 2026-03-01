@@ -1,0 +1,107 @@
+[project]
+name = "declare4pylon"
+version = "0.0.1"
+description = "DECLARE constraints implementation for [pylon-lib/pylon](https://github.com/pylon-lib/pylon)."
+authors = [{ name = "Salvatore Laiso", email = "salvatorelaiso@gmail.com" }]
+readme = "README.md"
+keywords = ['python']
+requires-python = ">=3.10,<3.14"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "jaxtyping>=0.3.7",
+    "numpy>=2.2.6",
+    "pylon-lib>=0.1.0",
+    "torch>=2.10.0",
+]
+
+[project.urls]
+Homepage = "https://salvatorelaiso.github.io/declare4pylon/"
+Repository = "https://github.com/salvatorelaiso/declare4pylon"
+Documentation = "https://salvatorelaiso.github.io/declare4pylon/"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pre-commit>=4.5.1",
+    "tox-uv>=1.29.0",
+    "deptry>=0.24.0",
+    "ty>=0.0.14",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.14",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.1",
+    "mkdocstrings[python]>=1.0.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.deptry.per_rule_ignores]
+DEP002 = ["numpy"]
+DEP004 = ["mkdocs_gen_files"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["declare4pylon"]
+
+[tool.ty.environment]
+python = "./.venv"
+python-version = "3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    # Ignore ast.Num deprecation coming from astor (Python 3.13+)
+    "ignore:ast.Num is deprecated.*:DeprecationWarning:astor.op_util",
+
+    # Ignore torch tensor copy warning inside pylon sampling solver
+    "ignore:To copy construct from a tensor.*:UserWarning:pylon.sampling_solver",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+fix = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D100",   # ignore missing docstring in public module
+    "D203",   # ignore `incorrect-blank-line-before-class` (D203) which is not compatible with `no-blank-line-before-class` (D211)
+    "D213",   # ignore `multi-line-summary-second-line` (D213) which is not compatible with `multi-line-summary-first-line` (D213)
+    "F722",   # ignore F722 (see https://docs.kidger.site/jaxtyping/faq/#flake8-or-ruff-are-throwing-an-error)
+    "COM812", # warning states it may cause conflicts when used with the formatter
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"__init__.py" = [
+    "D104", # missing docstring in public package
+]
+"tests/**/*.py" = [
+    "D100",    # missing docstring in public module
+    "D101",    # missing docstring in public class
+    "D103",    # ignore missing docstring in public function
+    "S101",    # ignore use of `assert` detected
+    "ANN201",  # ignore missing return type annotation for public function
+    "FBT",     # ignore boolean-typed positional argument in function definition
+    "PLR2004", # ignore magic value used in comparison
+]
+
+[tool.ruff.format]
+preview = true
+
+[tool.coverage.report]
+skip_empty = true
+
+[tool.coverage.run]
+branch = true
+source = ["declare4pylon"]

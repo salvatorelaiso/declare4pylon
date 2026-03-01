@@ -22,6 +22,12 @@ plugins:
       handlers:
         python:
           paths: ["declare4pylon"]
+          options:
+            show_root_heading: true
+            show_source: false
+            members_order: source
+            filters:
+              - "!^__(?!init__).*__$"
 theme:
   name: material
   feature:
